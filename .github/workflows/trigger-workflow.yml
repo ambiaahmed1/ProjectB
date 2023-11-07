@@ -1,0 +1,15 @@
+name: Trigger Workflow in Repository A
+
+on:
+  repository_dispatch:
+    types: [trigger-external-workflow]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Add your workflow steps here
